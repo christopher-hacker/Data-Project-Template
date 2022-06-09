@@ -1,4 +1,5 @@
 ~$*.xlsx # temporary excel files
+.vscode # vscode workspace settings
 
 
 ### BOILERPLATE ###
