@@ -7,8 +7,8 @@ SHELL := /bin/bash
 
 .PHONY: \
 	  all \
-	  cleanup \
-	  $(TASKS)
+	  cleanup # \
+#	  $(TASKS)
 
 all: $(TASKS)
 
