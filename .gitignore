@@ -1,3 +1,8 @@
+~$*.xlsx # temporary excel files
+
+
+### BOILERPLATE ###
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
