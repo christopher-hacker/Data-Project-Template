@@ -20,7 +20,7 @@ venv/bin/activate: requirements.txt
 	source $@ && pip install -r $<
 	touch $@
  
-clean:
+cleanup:
 	for d in $(TASKS) ; do \
-		cd "$(shell pwd)/$$d" && make clean  ; \
+		cd "$(shell pwd)/$$d" && make cleanup  ; \
 	done
