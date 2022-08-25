@@ -7,13 +7,17 @@ SHELL := /bin/bash
 
 .PHONY: \
 	  all \
+	  init \
 	  cleanup # \
 #	  $(TASKS)
 
 all: $(TASKS)
 
-$(TASKS): venv/bin/activate
-	source $< && $(MAKE) -C $@
+# $(TASKS): venv/bin/activate
+# 	source $< && $(MAKE) -C $@
+
+init: venv/bin/activate
+	source $<
 
 venv/bin/activate: requirements.txt
 	if [ ! -f $@ ]; then virtualenv venv; fi
