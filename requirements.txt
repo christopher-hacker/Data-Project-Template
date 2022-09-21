@@ -15,3 +15,6 @@ pandera[io]
 # utilities
 tqdm
 pyyaml
+pdfplumber
+airtable
+python-dotenv
