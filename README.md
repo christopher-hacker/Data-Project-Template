@@ -1,2 +1,2 @@
 # Data-Project-Template
-A template repository for data journalism projects
+My personal repository template for data journalism projects
