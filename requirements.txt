@@ -6,9 +6,7 @@ jupyter
 # frequently-used data tools
 pandas
 csvkit
-openpyxl
 geopandas
-rtree
 matplotlib
 pandera[io]
 
@@ -18,3 +16,6 @@ pyyaml
 pdfplumber
 airtable
 python-dotenv
+lxml
+openpyxl
+rtree
