@@ -7,8 +7,13 @@ jupyter
 pandas
 csvkit
 geopandas
-matplotlib
 pandera[io]
+
+# data viz
+matplotlib
+seaborn
+hvplot
+folium
 
 # utilities
 tqdm
