@@ -5,3 +5,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 # install additional OS packages.
 RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && sudo apt-get -y install --no-install-recommends tree csvkit
+
+COPY library-scripts/git-lfs-debian.sh /tmp/library-scripts/
+RUN apt-get update && bash /tmp/library-scripts/git-lfs-debian.sh
