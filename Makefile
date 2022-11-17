@@ -2,8 +2,12 @@ SHELL := /bin/bash
 
 TASKS = $(wildcard tasks/*)
 
-$(TASKS): venv/bin/activate
-	source $< && $(MAKE) -C $@
+.PHONY: all $(TASKS)
+
+all: $(TASKS)
+
+$(TASKS):
+	$(MAKE) -C $@
 
 venv/bin/activate: requirements.txt
 	if [ ! -f $@ ]; then virtualenv venv; fi
@@ -11,4 +15,4 @@ venv/bin/activate: requirements.txt
 	touch $@
 
 cleanup:
-	$(MAKE) cleanup -C $(TASKS)
+	find tasks -type f -path "*\output/*" -delete
