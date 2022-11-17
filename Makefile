@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-TASKS = $(wildcard tasks/*)
+TASKS=$(wildcard tasks/*)
 
 .PHONY: all $(TASKS)
 
