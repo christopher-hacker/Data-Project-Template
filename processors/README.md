@@ -17,7 +17,7 @@ The root Makefile exports a variable called PROCESSOR_DIR, which is the absolute
 You can use it to call a processor like so: 
 
 ```make
-..include ../../../Makefile
+include ../../../Makefile
 
 output/testoutput.csv: $(PROCESSOR_DIR)/script.py
     python $< > $@
