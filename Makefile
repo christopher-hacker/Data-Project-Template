@@ -1,30 +1,18 @@
 SHELL := /bin/bash
 
-# TASKS := \
-#     your \
-#     tasks \
-#     here
+TASKS=$(wildcard tasks/*)
 
-.PHONY: \
-	  all \
-	  init \
-	  cleanup # \
-#	  $(TASKS)
+.PHONY: all $(TASKS)
 
 all: $(TASKS)
 
-# $(TASKS): venv/bin/activate
-# 	source $< && $(MAKE) -C $@
-
-init: venv/bin/activate
-	source $<
+$(TASKS):
+	$(MAKE) -C $@
 
 venv/bin/activate: requirements.txt
 	if [ ! -f $@ ]; then virtualenv venv; fi
 	source $@ && pip install -r $<
 	touch $@
- 
+
 cleanup:
-	for d in $(TASKS) ; do \
-		cd "$(shell pwd)/$$d" && make cleanup  ; \
-	done
+	find tasks -type f -path "*\output/*" -delete
