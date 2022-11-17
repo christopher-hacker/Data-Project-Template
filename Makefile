@@ -1,6 +1,9 @@
 SHELL := /bin/bash
 
-TASKS=$(wildcard tasks/*)
+BUILD_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
+export PROCESSOR_DIR := $(BUILD_DIR)/processors
+
+TASKS := $(wildcard tasks/*)
 
 .PHONY: all $(TASKS)
 
@@ -14,5 +17,5 @@ venv/bin/activate: requirements.txt
 	source $@ && pip install -r $<
 	touch $@
 
-cleanup:
+cleanup-all:
 	find tasks -type f -path "*\output/*" -delete
