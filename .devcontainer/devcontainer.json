@@ -45,7 +45,7 @@
 					"*": true,
 					"yaml": false,
 					"plaintext": false,
-					"markdown": false,
+					"markdown": false
 				},
 				"editor.inlineSuggest.enabled": true,
 				"git.enableSmartCommit": true
