@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
-BUILD_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
-export PROCESSOR_DIR := $(BUILD_DIR)/processors
+DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
+export PROCESSOR_DIR := $(DIR)/processors
 
 TASKS := $(wildcard tasks/*)
 
