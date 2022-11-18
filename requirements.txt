@@ -26,3 +26,4 @@ openpyxl
 rtree
 thefuzz
 python-levenshtein
+notebook-as-pdf
