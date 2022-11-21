@@ -4,7 +4,7 @@
 	"name": "Custom Python 3 Development Container",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"context": "..",
+		"context": "../..",
 		"args": {
 			// Update 'VARIANT' to pick a Python version: 3, 3.10, 3.9, 3.8, 3.7, 3.6
 			// Append -bullseye or -buster to pin to an OS version.
@@ -66,7 +66,8 @@
 				"ms-vscode-remote.remote-ssh-edit",
 				"ms-vscode-remote.vscode-remote-extensionpack",
 				"GrapeCity.gc-excelviewer",
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"vscode-pdf",
 			]
 		}
 	},

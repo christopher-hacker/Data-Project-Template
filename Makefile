@@ -5,12 +5,19 @@ export PROCESSOR_DIR := $(DIR)/processors
 
 TASKS := $(wildcard tasks/*)
 
-.PHONY: all $(TASKS)
+.PHONY: all $(TASKS) init cleanup-all
 
 all: $(TASKS)
 
 $(TASKS):
 	$(MAKE) -C $@
+
+init: \
+	venv/bin/activate \
+	os-dependencies.log
+
+os-dependencies.log: apt.txt
+	sudo apt-get install -y $$(cat $<) > $@
 
 venv/bin/activate: requirements.txt
 	if [ ! -f $@ ]; then virtualenv venv; fi
