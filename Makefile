@@ -14,7 +14,11 @@ $(TASKS):
 
 init: \
 	venv/bin/activate \
-	os-dependencies.log
+	os-dependencies.log \
+	git-lfs
+
+git-lfs:
+	git lfs install
 
 os-dependencies.log: apt.txt
 	sudo apt-get install -y $$(cat $<) > $@
