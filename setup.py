@@ -1,11 +1,11 @@
-"""Setup script for recovered-firearms package."""
+"""Setup script for data-pipeline package."""
 
 from setuptools import setup
 
 setup(
-    name="recovered-firearms",
+    name="data-pipeline",
     version="0.1.0",
-    description="A data pipeline for recovered firearms data",
+    description="A data pipeline template",
     author="Christopher Hacker",
     author_email="cmhacker@cbs.com",
     package_dir={"": "processors"},
