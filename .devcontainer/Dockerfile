@@ -18,3 +18,6 @@ RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libgtk-3-0 \
         libnss3 \
         libxss1
+        
+# always auto setup remote for new git branches
+git config --global --add --bool push.autoSetupRemote true
