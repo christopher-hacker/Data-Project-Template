@@ -27,6 +27,3 @@ rtree
 thefuzz
 python-levenshtein
 notebook-as-pdf
-
-# local
--e .
