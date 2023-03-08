@@ -1,24 +1,22 @@
 SHELL := /bin/bash
 
-DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
-export PROCESSOR_DIR := $(DIR)/processors
+# DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
+# export PROCESSOR_DIR := $(DIR)/processors
 
-TASKS := $(sort $(wildcard tasks/*))
+# TASKS := $(sort $(wildcard tasks/*))
+# all: $(TASKS)
 
-.PHONY: all $(TASKS) init cleanup-all
+# $(TASKS):
+#	$(MAKE) -C $@
 
-all: $(TASKS)
-
-$(TASKS):
-	$(MAKE) -C $@
-
-init: \
+setup: \
 	venv/bin/activate \
 	os-dependencies.log \
 	git-lfs
 
 git-lfs:
 	git lfs install
+	git lfs pull
 
 os-dependencies.log: apt.txt
 	sudo apt-get install -y $$(cat $<) > $@
