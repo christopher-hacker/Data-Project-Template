@@ -36,11 +36,11 @@
 				"workbench.editorAssociations": {
 					"*.md": "vscode.markdown.preview.editor"
 				},
-				"python.defaultInterpreterPath": "./venv/bin/python",
+				"python.defaultInterpreterPath": "./.venv/bin/python",
 				"python.linting.enabled": true,
 				"python.linting.pylintEnabled": true,
-				"python.formatting.blackPath": "./venv/bin/black",
-				"python.linting.pylintPath": "./venv/bin/pylint",
+				"python.formatting.blackPath": "./.venv/bin/black",
+				"python.linting.pylintPath": "./.venv/bin/pylint",
 				"python.languageServer": "Pylance",
 				"window.restoreWindows": "none",
 				"explorer.confirmDragAndDrop": false,
