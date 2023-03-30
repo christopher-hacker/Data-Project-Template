@@ -17,6 +17,9 @@
 	"features": {
 		"ghcr.io/devcontainers/features/git-lfs:1": {
 			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/poetry:2": {
+			"version": "latest"
 		}
 	},
 	// Configure tool-specific properties.
@@ -33,11 +36,11 @@
 				"workbench.editorAssociations": {
 					"*.md": "vscode.markdown.preview.editor"
 				},
-				"python.defaultInterpreterPath": "./venv/bin/python",
+				"python.defaultInterpreterPath": "./.venv/bin/python",
 				"python.linting.enabled": true,
 				"python.linting.pylintEnabled": true,
-				"python.formatting.blackPath": "./venv/bin/black",
-				"python.linting.pylintPath": "./venv/bin/pylint",
+				"python.formatting.blackPath": "./.venv/bin/black",
+				"python.linting.pylintPath": "./.venv/bin/pylint",
 				"python.languageServer": "Pylance",
 				"window.restoreWindows": "none",
 				"explorer.confirmDragAndDrop": false,
@@ -67,7 +70,7 @@
 				"ms-vscode-remote.vscode-remote-extensionpack",
 				"GrapeCity.gc-excelviewer",
 				"GitHub.copilot",
-				"vscode-pdf",
+				"vscode-pdf"
 			]
 		}
 	},

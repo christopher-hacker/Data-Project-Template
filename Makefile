@@ -10,7 +10,7 @@ SHELL := /bin/bash
 #	$(MAKE) -C $@
 
 setup: \
-	venv/bin/activate \
+	.venv/bin/python \
 	os-dependencies.log \
 	git-lfs
 
@@ -21,10 +21,8 @@ git-lfs:
 os-dependencies.log: apt.txt
 	sudo apt-get install -y $$(cat $<) > $@
 
-venv/bin/activate: requirements.txt
-	if [ ! -f $@ ]; then virtualenv venv; fi
-	source $@ && pip install -r $<
-	touch $@
+.venv/bin/python: pyproject.toml poetry.toml
+	poetry install
 
 cleanup-all:
 	find tasks -type f -path "*\output/*" -delete
