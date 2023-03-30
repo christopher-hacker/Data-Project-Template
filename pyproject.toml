@@ -5,7 +5,7 @@ description = "A data journalism project template."
 authors = ["Chris Hacker <49451910+christopher-hacker@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "*"
 black = "*"
 pylint = "*"
 jupyter = "*"
