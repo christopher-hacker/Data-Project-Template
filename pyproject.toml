@@ -29,6 +29,9 @@ thefuzz = "*"
 python-levenshtein = "*"
 notebook-as-pdf = "*"
 mapclassify = "*"
+pygris = "*"
+census = "*"
+us = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
