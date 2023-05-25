@@ -28,6 +28,7 @@ rtree = "*"
 thefuzz = "*"
 python-levenshtein = "*"
 notebook-as-pdf = "*"
+mapclassify = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
