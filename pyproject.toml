@@ -32,6 +32,8 @@ mapclassify = "*"
 pygris = "*"
 census = "*"
 us = "*"
+pre-commit = "^3.3.2"
+enforce-notebook-run-order = "^0.1.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
