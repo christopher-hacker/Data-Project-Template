@@ -22,8 +22,12 @@ export SRC_DIR := $(DIR)/src
 
 setup: \
 	.venv/bin/python \
+	.git/hooks/pre-commit \
 	os-dependencies.log \
 	git-lfs
+
+.git/hooks/pre-commit: .pre-commit-config.yaml
+	poetry run pre-commit install
 
 # by default, uses git lfs for pretty much any data file
 # see .gitattributes for more.
