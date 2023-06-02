@@ -28,9 +28,16 @@ export SRC_DIR := $(DIR)/src
 	# add commands to cleanup any folders 
 	
 sync-template:
-	git remote add template https://github.com/christopher-hacker/Data-Project-Template
-	git fetch --all
-	git merge template/main --allow-unrelated-histories
+	echo "WARNING: This operation can potentially introduce merge conflicts that require manual resolution. Please review the changes carefully before proceeding."
+	read -p "Are you sure you want to continue? (y/n) " confirm
+
+	if [[ $confirm == [Yy] || $confirm == [Yy][Ee][Ss] ]]; then
+		git remote add template https://github.com/christopher-hacker/Data-Project-Template
+		git fetch --all
+		git merge template/main --allow-unrelated-histories
+	else
+		echo "Merge operation aborted."
+	fi
 
 # does all setup necessary for the project
 setup: \
