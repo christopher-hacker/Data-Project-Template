@@ -11,7 +11,8 @@ export SRC_DIR := $(DIR)/src
 	$(TASKS) \
 	setup \
 	cleanup-all \
-	git-lfs
+	git-lfs \
+	sync-template
 
 # uncomment this if you use the recursive task structure. if
 # left commented, the "make" command will just run the installation
@@ -20,12 +21,25 @@ export SRC_DIR := $(DIR)/src
 # $(TASKS):
 #	$(MAKE) -C $@
 
+# also uncomment this if you're using recursive make task structure
+# this will clean up all output files in all tasks
+# cleanup-all:
+#	find tasks -type f -path "*\output/*" -delete
+	# add commands to cleanup any folders 
+	
+sync-template:
+	git remote add template https://github.com/christopher-hacker/Data-Project-Template
+	git fetch --all
+	git merge template/main --allow-unrelated-histories
+
+# does all setup necessary for the project
 setup: \
 	.venv/bin/python \
 	.git/hooks/pre-commit \
 	os-dependencies.log \
 	git-lfs
 
+# install hooks in pre-commit-config
 .git/hooks/pre-commit: .pre-commit-config.yaml
 	poetry run pre-commit install
 
@@ -41,9 +55,6 @@ git-lfs:
 os-dependencies.log: apt.txt
 	sudo apt-get install -y $$(cat $<) > $@
 
+# creates a virtual environment
 .venv/bin/python: pyproject.toml poetry.toml
 	poetry install
-
-cleanup-all:
-	find tasks -type f -path "*\output/*" -delete
-	# add commands to cleanup any folders 
