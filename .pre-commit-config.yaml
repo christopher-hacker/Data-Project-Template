@@ -12,9 +12,6 @@ repos:
         types: [python]
         require_serial: true
   - repo: https://github.com/christopher-hacker/enforce-notebook-run-order
-    rev: 0.1.4
+    rev: 1.3.1
     hooks:
       - id: enforce-notebook-run-order
-        name: enforce-notebook-run-order
-        entry: enforce-notebook-run-order
-        types: [jupyter]
