@@ -42,13 +42,8 @@ sync-template:
 # does all setup necessary for the project
 setup: \
 	.venv/bin/python \
-	.git/hooks/pre-commit \
 	os-dependencies.log \
 	git-lfs
-
-# install hooks in pre-commit-config
-.git/hooks/pre-commit: .pre-commit-config.yaml
-	poetry run pre-commit install
 
 # by default, uses git lfs for pretty much any data file
 # see .gitattributes for more.
