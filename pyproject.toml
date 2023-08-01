@@ -32,6 +32,7 @@ mapclassify = "*"
 pygris = "*"
 census = "*"
 us = "*"
+pyjanitor = "*"
 pre-commit = "^3.3.2"
 
 [build-system]
