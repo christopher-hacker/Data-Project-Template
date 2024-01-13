@@ -89,6 +89,6 @@
             ]
         }
     },
-    "postCreateCommand": "poetry install && git lfs pull",
+    "postCreateCommand": ".devcontainer/post-create.sh",
     "remoteUser": "vscode"
 }
