@@ -2,6 +2,8 @@
 ~$*.xlsx
 # vscode workspace settings
 .vscode
+# snakemake logs and checkpoints
+.snakemake
 
 
 ### BOILERPLATE ###
