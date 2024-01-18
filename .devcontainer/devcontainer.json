@@ -76,6 +76,7 @@
                 "ms-python.vscode-pylance",
                 "ms-python.black-formatter",
                 "ms-python.pylint",
+                "ms-toolsai.jupyter",
                 // non-python formatters and linters
                 "tfehlmann.snakefmt",
                 "foxundermoon.shell-format",
